@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body>
+  <center>
+    
+<!-- Форма будет отправлять введенные данные скрипту go.php методом POST -->
+      <form action="go.php" method="post" enctype="multipart/form-data">
+        
+<!-- Сама капча -->
+        <img src='captcha.php' id='capcha-image'>
+        
+<!-- Ссылка на обновление капчи. Запрашиваем у captcha.php случайное изображение.  -->
+        <br><a href="javascript:void(0);" onclick="document.getElementById('capcha-image').src='captcha.php?rid=' + Math.random();">Обновить капчу</a>
+
+<br><br>
+<input type="text" name="code">
+        
+<!-- Отправляем данные скрипту-обработчику go.php -->
+<br><br><input type="submit" name="go" value="Продолжить">
+
+</form>
+      </center>
+	</body>
+</html>
